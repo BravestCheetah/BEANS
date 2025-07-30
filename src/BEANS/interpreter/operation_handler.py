@@ -24,7 +24,7 @@ def _load_operations():
             
     return _operations_cache
 
-def execute_operation(operation: str, mem: (registers, memory), args: list):
+def execute_operation(operation: str, mem: tuple[registers, memory], args: list):
     operations = _load_operations()
     operation = operation.upper()
 

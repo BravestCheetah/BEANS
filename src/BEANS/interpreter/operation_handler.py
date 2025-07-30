@@ -1,0 +1,36 @@
+from src.BEANS.interpreter.memory.memory import memory
+from src.BEANS.interpreter.memory.registers import registers
+
+import importlib, pathlib
+import sys
+
+OPERATIONS_FOLDER = "operations"
+sys.path.insert(0, os.path.abspath("."))
+
+_operations_cache = {} # Store Operation Cache So You Only Have To Load Modules Once
+
+def _load_operations():
+    global _operations_cache
+
+    if _operations_cache:
+        return _operations_cache
+    
+    for file in pathlib.Path(OPERATIONS_FOLDER).iterdir():
+        if str(file).endswith(".py"):
+                mod_name = filename[:-3]
+                module = importlib.import_module(f"src.BEANS.interpreter.{OPERATIONS_FOLDER}.{mod_name}")
+
+                _operations_cache[mod_name.upper()] = module
+            
+    return _operations_cache
+
+def execute_operation(operation: str, mem: (registers, memory), args: list):
+    operations = _load_operations()
+    operation = operation.upper()
+
+    if operation in operations:
+        operation_class = getattr(operations[operation], "operation")
+        return operation_class.execute_operation(mem, args)
+    
+    else:
+        raise ValueError(f"Operation '{operation}' could not execute: not found")

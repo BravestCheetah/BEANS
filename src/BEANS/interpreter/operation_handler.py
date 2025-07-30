@@ -16,8 +16,8 @@ def _load_operations():
         return _operations_cache
     
     for file in pathlib.Path(OPERATIONS_FOLDER).iterdir():
-        if str(file).endswith(".py"):
-                mod_name = filename[:-3]
+        if file.name.endswith(".py"):
+                mod_name = file.name[:-3]
                 module = importlib.import_module(f"src.BEANS.interpreter.{OPERATIONS_FOLDER}.{mod_name}")
 
                 _operations_cache[mod_name.upper()] = module

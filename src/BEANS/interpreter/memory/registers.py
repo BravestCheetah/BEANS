@@ -22,3 +22,5 @@ class registers():
         for i in range(reg_num):
             self.regs.append(register(reg_size))
     
+    def read(reg):
+        return self.regs[reg].value()

@@ -12,3 +12,15 @@ class register():
     
     def value(self):
         return format(self.val, f'0{self.size}b')
+
+
+class registers():
+
+    def __init__(self, reg_size, reg_num):
+
+        self.regs =[]
+        for i in range(reg_num):
+            self.regs.append(register(reg_size))
+    
+    def read(reg):
+        return self.regs[reg].value()

@@ -24,3 +24,6 @@ class registers():
     
     def read(reg):
         return self.regs[reg].value()
+    
+    def write(reg, val):
+        self.regs[reg].set(val)

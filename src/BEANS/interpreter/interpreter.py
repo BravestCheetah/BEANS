@@ -7,5 +7,3 @@ def parser(file_path: str) -> list:
                 break
             code.append(line.split(' '))
     return code
-
-print(parser("code.beans"))

@@ -1,7 +1,7 @@
 from src.BEANS.interpreter.memory.memory import memory
 from src.BEANS.interpreter.memory.registers import registers
 
-import importlib, pathlib
+import importlib, pathlib, os
 import sys
 
 OPERATIONS_FOLDER = "operations"

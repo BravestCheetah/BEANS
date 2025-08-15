@@ -1,7 +1,8 @@
 from PyQt6.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QGroupBox, QLabel, QSpacerItem, QSizePolicy
 from PyQt6.QtCore import Qt
+from PyQt6.QtGui import QFont
 
-class BeansGui(QMainWindow):
+class BEANSGui(QMainWindow):
     def __init__(self, code_path):
         super().__init__()
         self.setWindowTitle(f"BEANS 0.1.0 - {code_path}")
@@ -10,6 +11,9 @@ class BeansGui(QMainWindow):
         central_widget = QWidget()
         self.setCentralWidget(central_widget)
 
+        self.label_font = QFont()
+        self.label_font.setPointSize(12)
+
         main_layout = QVBoxLayout()
         central_widget.setLayout(main_layout)
 
@@ -17,29 +21,30 @@ class BeansGui(QMainWindow):
 
 
 
-
         operation_panel = QGroupBox("OPERATION")
         operation_layout = QVBoxLayout()
-        operation_layout.setSpacing(2)
-        operation_layout.setContentsMargins(5, 5, 5, 5)
         operation_panel.setLayout(operation_layout)
 
         self.label_last_op = QLabel("Last Operation: None")
+        self.label_last_op.setFont(self.label_font)
         operation_layout.addWidget(self.label_last_op, alignment=Qt.AlignmentFlag.AlignTop | Qt.AlignmentFlag.AlignLeft)
 
         self.label_last_args = QLabel("Last Arguments: [None, None]")
+        self.label_last_args.setFont(self.label_font)
         operation_layout.addWidget(self.label_last_args, alignment=Qt.AlignmentFlag.AlignTop | Qt.AlignmentFlag.AlignLeft)
 
         self.label_last_op_line = QLabel("Line: None / None")
+        self.label_last_op_line.setFont(self.label_font)
         operation_layout.addWidget(self.label_last_op_line, alignment=Qt.AlignmentFlag.AlignTop | Qt.AlignmentFlag.AlignLeft)
 
         self.label_last_op_time = QLabel("Time Taken: None")
+        self.label_last_op_time.setFont(self.label_font)
         operation_layout.addWidget(self.label_last_op_time, alignment=Qt.AlignmentFlag.AlignTop | Qt.AlignmentFlag.AlignLeft)
-
 
         top_layout.addWidget(operation_panel)
 
 
+        memory_layout = QVBoxLayout()
 
         memory_panel = QGroupBox("MEMORY")
         memory_layout = QVBoxLayout()
@@ -60,6 +65,6 @@ class BeansGui(QMainWindow):
 
 
 app = QApplication([])
-win = BeansGui("path/to/file.beans")
+win = BEANSGui("path/to/file.beans")
 win.show()
 app.exec()

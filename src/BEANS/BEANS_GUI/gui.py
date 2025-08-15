@@ -1,7 +1,6 @@
-from PyQt6.QtWidgets import QApplication, QWidget, QPushButton
-
+from PyQt6.QtWidgets import QApplication, QMainWindow
 app = QApplication([])
-window = QPushButton("hello")
+window = QMainWindow()
 window.show()
 
 app.exec()

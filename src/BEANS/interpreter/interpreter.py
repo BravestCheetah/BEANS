@@ -5,11 +5,11 @@ from src.BEANS.interpreter.operation_handler import execute_operation
 def interpret(file_path: str):
     regs = registers()
     mem = memory()
-    
+
     with open(file_path, "r") as file:
         for line in file:
             line = line.strip()
             if line == '' or line[0] == '#':
-                break
+                continue
             code = line.split(' ')
             execute_operation(code[0], (regs, mem), code[1:])

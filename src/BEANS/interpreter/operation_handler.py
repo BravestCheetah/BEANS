@@ -4,7 +4,7 @@ from src.BEANS.interpreter.memory.registers import registers
 import importlib, pathlib, os
 import sys
 
-OPERATIONS_FOLDER = "operations"
+OPERATIONS_FOLDER = os.getcwd() / pathlib.Path("operations")
 sys.path.insert(0, os.path.abspath("."))
 
 _operations_cache = {} # Store Operation Cache So You Only Have To Load Modules Once
@@ -18,7 +18,7 @@ def _load_operations():
     for file in pathlib.Path(OPERATIONS_FOLDER).iterdir():
         if file.name.endswith(".py"):
                 mod_name = file.name[:-3]
-                module = importlib.import_module(f"src.BEANS.interpreter.{OPERATIONS_FOLDER}.{mod_name}")
+                module = importlib.import_module(f"src.BEANS.interpreter.operations.{mod_name}")
 
                 _operations_cache[mod_name.upper()] = module
             

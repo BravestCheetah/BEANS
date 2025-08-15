@@ -3,8 +3,8 @@ from src.BEANS.interpreter.memory.memory import memory
 from src.BEANS.interpreter.operation_handler import execute_operation
 
 def interpret(file_path: str):
-    regs = registers()
-    mem = memory()
+    regs = registers(8, 16)
+    mem = memory(32, 8)
 
     with open(file_path, "r") as file:
         for line in file:

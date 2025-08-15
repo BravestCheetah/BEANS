@@ -4,7 +4,7 @@ from src.BEANS.interpreter.memory.registers import registers
 import importlib, pathlib, os
 import sys
 
-OPERATIONS_FOLDER = os.getcwd() / pathlib.Path("operations")
+OPERATIONS_FOLDER = pathlib.Path(__file__).parent / "operations"
 sys.path.insert(0, os.path.abspath("."))
 
 _operations_cache = {} # Store Operation Cache So You Only Have To Load Modules Once

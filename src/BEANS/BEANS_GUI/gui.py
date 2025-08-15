@@ -9,6 +9,6 @@ class beans_gui(QMainWindow):
 
 
 app = QApplication([])
-window = beans_gui("Path/to/code.bean")
-window.show()
+win = beans_gui("Path/to/code.bean")
+win.show()
 app.exec()

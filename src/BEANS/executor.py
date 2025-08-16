@@ -35,4 +35,4 @@ class BEANSExecturor():
                 if line == '' or line[0:1] == '//':
                     continue
 
-                index = interpret_line(line, self.regs, self.mem)
+                index = interpret_line(line, self.regs, self.mem, index)

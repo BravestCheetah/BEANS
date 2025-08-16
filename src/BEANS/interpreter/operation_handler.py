@@ -24,13 +24,13 @@ def _load_operations():
             
     return _operations_cache
 
-def execute_operation(operation: str, mem: tuple[registers, memory], args: list):
+def execute_operation(operation: str, mem: tuple[registers, memory], args: list, pc_index: int):
     operations = _load_operations()
     operation = operation.upper()
 
     if operation in operations:
         operation_class = getattr(operations[operation], "operation")
-        return operation_class.execute_operation(mem, args)
+        return operation_class.execute_operation(mem, args, pc_index)
     
     else:
         raise ValueError(f"Operation '{operation}' could not execute: not found")

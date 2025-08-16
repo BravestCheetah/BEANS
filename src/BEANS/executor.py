@@ -8,11 +8,13 @@ from src.BEANS.interpreter.memory.registers import registers
 from usefullog.logger import Logger
 from pathlib import Path
 from platformdirs import user_log_dir
+import os
 
 class BEANSExecturor():
     def __init__(self, path):
 
         self.code_path = path
+        os.makedirs(user_log_dir("BEANS", "Cheetah"), exist_ok=True)
         self.logger = Logger("BEANS", do_log_saving=True, log_save_folder=user_log_dir("BEANS", "Cheetah"))
 
         self.logger.info("BEANS Executor Initialization Process is starting...")
@@ -36,3 +38,6 @@ class BEANSExecturor():
                     continue
 
                 index = interpret_line(line, self.regs, self.mem, index)
+
+
+execotoor = BEANSExecturor(argv[1])

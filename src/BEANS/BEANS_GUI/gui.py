@@ -1,4 +1,4 @@
-from PyQt6.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QGroupBox, QLabel, QSpacerItem, QSizePolicy
+from PyQt6.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QGroupBox, QLabel, QScrollArea
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QFont
 
@@ -18,8 +18,6 @@ class BEANSGui(QMainWindow):
         central_widget.setLayout(main_layout)
 
         top_layout = QHBoxLayout()
-
-
 
         operation_panel = QGroupBox("OPERATION")
         operation_layout = QVBoxLayout()
@@ -44,13 +42,29 @@ class BEANSGui(QMainWindow):
         top_layout.addWidget(operation_panel)
 
 
-        memory_layout = QVBoxLayout()
+        memory_group_layout = QVBoxLayout()
+
+        register_panel = QGroupBox("REGISTERS")
+        register_layout = QVBoxLayout()
+        register_panel.setLayout(register_layout)
+
+        self.label_register_data = QLabel("00 00 00 00 00 00 00 00\n00 00 00 00 00 00 00 00")
+        self.label_register_data.setFont(self.label_font)
+        register_layout.addWidget(self.label_register_data)
+
+        memory_group_layout.addWidget(register_panel)
+
 
         memory_panel = QGroupBox("MEMORY")
         memory_layout = QVBoxLayout()
         memory_panel.setLayout(memory_layout)
 
-        top_layout.addWidget(memory_panel)
+        self.label_memory_data = QLabel("00 00 00 00 00 00 00 00\n00 00 00 00 00 00 00 00\n00 00 00 00 00 00 00 00\n00 00 00 00 00 00 00 00")
+        self.label_memory_data.setFont(self.label_font)
+        memory_layout.addWidget(self.label_memory_data)
+
+        memory_group_layout.addWidget(memory_panel)
+        top_layout.addLayout(memory_group_layout)
         main_layout.addLayout(top_layout)
 
 

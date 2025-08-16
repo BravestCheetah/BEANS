@@ -10,6 +10,9 @@ from pathlib import Path
 from platformdirs import user_log_dir
 import os
 
+from PyQt6.QtWidgets import QApplication
+from sys import argv
+
 class BEANSExecturor():
     def __init__(self, path):
 
@@ -35,9 +38,14 @@ class BEANSExecturor():
                 line = lines[index].strip()
 
                 if line == '' or line[0:1] == '//':
+                    index += 1
                     continue
 
                 index = interpret_line(line, self.regs, self.mem, index)
 
 
+app = QApplication([])
 execotoor = BEANSExecturor(argv[1])
+execotoor.gui.show()
+
+app.exec()

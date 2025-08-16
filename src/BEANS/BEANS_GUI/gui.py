@@ -2,9 +2,17 @@ from PyQt6.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QHB
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QFont
 
+from usefullog.logger import Logger
+from time import perf_counter
+
 class BEANSGui(QMainWindow):
-    def __init__(self, code_path):
+    def __init__(self, code_path, logger: Logger):
         super().__init__()
+
+        self.logger = logger
+        self.logger.info("BEANSGui - Initializing GUI")
+        start = perf_counter()
+
         self.setWindowTitle(f"BEANS 0.1.0 - {code_path}")
         self.setGeometry(400, 400, 800, 400)
 
@@ -76,9 +84,4 @@ class BEANSGui(QMainWindow):
         
         main_layout.addWidget(module_panel)
 
-
-
-app = QApplication([])
-win = BEANSGui("path/to/file.beans")
-win.show()
-app.exec()
+        logger.info(f"Initialized gui in {(perf_counter() - start) / 1000}ms")

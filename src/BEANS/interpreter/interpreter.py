@@ -11,5 +11,10 @@ def interpret(file_path: str):
             line = line.strip()
             if line == '' or line[0] == '#':
                 continue
-            code = line.split(' ')
-            execute_operation(code[0], (regs, mem), code[1:])
+            interpret_line(line, regs, mem)
+
+
+
+def interpret_line(line: str, regs: registers, mem: memory):
+    code = line.split(' ')
+    execute_operation(code[0], (regs, mem), code[1:])

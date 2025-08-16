@@ -29,7 +29,7 @@ class BEANSExecturor():
             lines = f.readlines()
 
             index = 0
-            while index <= len(lines):
+            while index <= len(lines) - 1:
                 line = lines[index].strip()
 
                 if line == '' or line[0:1] == '//':

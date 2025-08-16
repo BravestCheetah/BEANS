@@ -5,3 +5,5 @@ from src.BEANS.interpreter.interpreter import interpret_line
 from src.BEANS.interpreter.memory.memory import memory
 from src.BEANS.interpreter.memory.registers import registers
 
+class BEANSExecturor():
+    pass

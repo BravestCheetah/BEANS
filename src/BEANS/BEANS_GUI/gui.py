@@ -1,26 +1,33 @@
-from PyQt6.QtCore import QSize, Qt
-from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QGridLayout, QWidget
+from PyQt6.QtWidgets import QApplication, QMainWindow, QWidget, QGridLayout, QPushButton
 
-class beans_gui(QMainWindow):
-    def __init__(self, code_path):
+class NestedGridGUI(QMainWindow):
+    def __init__(self):
         super().__init__()
 
-        self.setWindowTitle(f"BEANS 0.1.0 -  {code_path}")
-        self.setGeometry(400, 400, 600, 300)
+        self.setWindowTitle("Nested Grid Example")
+        self.setGeometry(400, 400, 600, 400)
 
-        central = QWidget()
-        self.setCentralWidget(central)
+        central_widget = QWidget()
+        self.setCentralWidget(central_widget)
 
-        grid = QGridLayout()
-        central.setLayout(grid)
+        main_grid = QGridLayout()
+        central_widget.setLayout(main_grid)
 
-        for i in range(1, 5):
-            for j in range(1, 5):
-                grid.addWidget(QPushButton("B" + str(i) + str(j)), i, j)
+        for i in range(2):
+            for j in range(2):
 
+                cell_widget = QWidget()
+                cell_layout = QGridLayout()
+                cell_widget.setLayout(cell_layout)
+
+                for x in range(2):
+                    for y in range(2):
+                        cell_layout.addWidget(QPushButton(f"B{i}{j}-{x}{y}"), x, y)
+
+                main_grid.addWidget(cell_widget, i, j)
 
 
 app = QApplication([])
-win = beans_gui("Path/to/code.bean")
+win = NestedGridGUI()
 win.show()
 app.exec()

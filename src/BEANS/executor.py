@@ -18,7 +18,7 @@ from PyQt6.QtWidgets import QApplication
 
 
 class BEANSExecutor:
-    def __init__(self, path, gui, logger, mem, regs):
+    def __init__(self, path, gui, logger, mem: memory, regs: registers):
         self.code_path = path
         self.gui = gui
         self.logger = logger
@@ -30,7 +30,22 @@ class BEANSExecutor:
 
         self.index = 0
 
+
+    def get_data(self) -> tuple[str, str]:
+
+        reg_data = ""
+        for reg in self.regs.regs:
+            reg_data += f"{reg.val} "
+        
+        mem_data = ""
+        for reg in self.mem.memory.regs:
+            mem_data += f"{reg.val} "
+        
+        return (reg_data, mem_data)
+
+
     def step(self):
+
         start = perf_counter()
 
         if self.index >= len(self.lines):

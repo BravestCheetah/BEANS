@@ -38,7 +38,10 @@ class BEANSExecutor:
             value = str(reg.val) + " "
             if len(value) == 2:
                 value = "0" + value
-        
+            
+            reg_data += value
+
+
         mem_data = ""
         for reg in self.mem.memory.regs:
             value = str(reg.val) + " "
@@ -46,7 +49,16 @@ class BEANSExecutor:
                 value = "0" + value
 
             mem_data += value
-        
+
+        mem_values = [f"{int(val):02}" for val in mem_data.split()]
+        chunk_size = len(mem_values) // 4
+        mem_data = ""
+
+        for i in range(4):
+            start = i * chunk_size
+            end = (i + 1) * chunk_size
+            mem_data += " ".join(mem_values[start:end]) + "\n"
+                
         return (reg_data, mem_data)
 
 

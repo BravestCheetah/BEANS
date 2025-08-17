@@ -11,3 +11,9 @@ ADD r0 r0 r1
 HALT
 
 // Now The Result Of 1+1 is in register 1!
+
+// Full Program:
+
+// LDI r0 i1
+// ADD r0 r0 r1
+// HALT

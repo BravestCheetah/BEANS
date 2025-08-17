@@ -16,6 +16,8 @@ from sys import argv
 class BEANSExecturor():
     def __init__(self, path):
 
+        self.app = QApplication(argv)
+
         self.code_path = path
         os.makedirs(user_log_dir("BEANS", "Cheetah"), exist_ok=True)
         self.logger = Logger("BEANS", do_log_saving=True, log_save_folder=user_log_dir("BEANS", "Cheetah"))
@@ -27,6 +29,7 @@ class BEANSExecturor():
         self.regs = registers(8, 8)
 
         self.gui = BEANSGui(self.code_path, self.logger)
+        self.gui.show()
 
         self.logger.info("BEANS Executor Initialization Process Has Finished, starting interpretation process")
 
@@ -44,6 +47,4 @@ class BEANSExecturor():
                 index = interpret_line(line, self.regs, self.mem, index)
 
 
-app = QApplication(argv)
 executor = BEANSExecturor(argv[1])
-app.exec()

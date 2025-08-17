@@ -18,7 +18,7 @@ from PyQt6.QtWidgets import QApplication
 
 
 class BEANSExecutor:
-    def __init__(self, path, gui, logger, mem: memory, regs: registers):
+    def __init__(self, path, gui: BEANSGui, logger: Logger, mem: memory, regs: registers):
         self.code_path = path
         self.gui = gui
         self.logger = logger
@@ -35,11 +35,17 @@ class BEANSExecutor:
 
         reg_data = ""
         for reg in self.regs.regs:
-            reg_data += f"{reg.val} "
+            value = str(reg.val) + " "
+            if len(value) == 2:
+                value = "0" + value
         
         mem_data = ""
         for reg in self.mem.memory.regs:
-            mem_data += f"{reg.val} "
+            value = str(reg.val) + " "
+            if len(value) == 2:
+                value = "0" + value
+
+            mem_data += value
         
         return (reg_data, mem_data)
 
@@ -62,7 +68,13 @@ class BEANSExecutor:
         self.gui.label_last_op_line.setText(
             f"Line: {self.index} / {len(self.lines)}"
         )
+
+        reg_data, mem_data = self.get_data()
+        self.gui.label_register_data.setText(reg_data)
+        self.gui.label_memory_data.setText(mem_data)
+
         self.gui.label_last_op_time.setText(f"Time Taken: {(perf_counter() - start) * 1000:.3f}")
+        
 
 
 if __name__ == "__main__":

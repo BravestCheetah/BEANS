@@ -1,5 +1,5 @@
-from BEANS.interpreter.memory.memory import memory
-from BEANS.interpreter.memory.registers import registers
+from src.BEANS.interpreter.memory.memory import memory
+from src.BEANS.interpreter.memory.registers import registers
 
 
 class operation:

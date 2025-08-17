@@ -5,7 +5,7 @@ class memory():
         self.memory = registers(mem_reg_size, mem_size)
     
     def read(self, address: int, dest_reg: register):
-        dest_reg.set(self.memory.read())
+        dest_reg.set(self.memory.read(address))
     
     def write(self, adress: int, val_reg: register):
         self.memory.write(adress, val_reg.value())

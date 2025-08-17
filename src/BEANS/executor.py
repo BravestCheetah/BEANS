@@ -23,4 +23,16 @@ class BEANSExecturor():
 
         self.gui = BEANSGui(self.code_path, self.logger)
 
-        
+        self.logger.info("BEANS Executor Initialization Process Has Finished, starting interpretation process")
+
+        with open(self.code_path, "r") as f:
+            lines = f.readlines()
+
+            index = 0
+            while index <= len(lines):
+                line = lines[index].strip()
+
+                if line == '' or line[0:1] == '//':
+                    continue
+
+                index = interpret_line(line, self.regs, self.mem)

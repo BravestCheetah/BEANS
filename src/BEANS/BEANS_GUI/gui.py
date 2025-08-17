@@ -84,4 +84,4 @@ class BEANSGui(QMainWindow):
         
         main_layout.addWidget(module_panel)
 
-        logger.info(f"Initialized gui in {(perf_counter() - start) / 1000}ms")
+        logger.info(f"Initialized gui in {(perf_counter() - start) * 1000:.3f}ms")

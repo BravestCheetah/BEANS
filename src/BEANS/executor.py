@@ -44,8 +44,6 @@ class BEANSExecturor():
                 index = interpret_line(line, self.regs, self.mem, index)
 
 
-app = QApplication([])
-execotoor = BEANSExecturor(argv[1])
-execotoor.gui.show()
-
+app = QApplication(argv)
+executor = BEANSExecturor(argv[1])
 app.exec()

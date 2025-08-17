@@ -89,8 +89,8 @@ class BEANSExecutor:
         
 
 
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
+def run_executor(code_path):
+    app = QApplication([])
     signal.signal(signal.SIGINT, signal.SIG_DFL)
 
     os.makedirs(user_log_dir("BEANS", "Cheetah"), exist_ok=True)
@@ -103,7 +103,7 @@ if __name__ == "__main__":
     mem = memory(32, 8)
     regs = registers(8, 8)
 
-    gui = BEANSGui(argv[1], logger)
+    gui = BEANSGui(code_path, logger)
     executor = BEANSExecutor(argv[1], gui, logger, mem, regs)
 
     gui.show()

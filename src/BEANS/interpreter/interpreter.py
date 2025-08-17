@@ -14,12 +14,11 @@ def parse_args(args: list[str]) -> list:
             parsed.append(("mem", arg[1:]))
 
         elif arg.startswith("io"):
-            parsed.append(("io", args[1:]))
+            parsed.append(("io", arg[2:]))
 
         elif arg.startswith("i"):
-            parsed.append(("int", args[1:]))
+            parsed.append(("int", arg[1:]))
         
-
     return parsed
 
 def interpret_line(line: str, regs: registers, mem: memory, pc_index: int):

@@ -1,5 +1,9 @@
+from BEANS.interpreter.memory.memory import memory
+from BEANS.interpreter.memory.registers import registers
+
+
 class operation:
-    def execute_operation(mem, args, pc_index): # type: ignore
+    def execute_operation(mem: tuple[registers, memory], args, pc_index): # type: ignore
 
         if len(args) != 2 or args[0][0] != "reg" or args[1][0] != "int":
             print("Wrong args lil bro")

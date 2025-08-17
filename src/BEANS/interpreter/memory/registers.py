@@ -6,9 +6,7 @@ class register():
         self.max = (1 << self.size) - 1
 
     def set(self, val):
-        if val < 0 or val > self.max:
-            raise ValueError(f"Value {val} does not fit in register with {self.size} bits")
-        self.val = val
+        self.val = val & self.max
     
     def value(self):
         return self.val

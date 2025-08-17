@@ -35,10 +35,6 @@ class BEANSGui(QMainWindow):
         self.label_last_op.setFont(self.label_font)
         operation_layout.addWidget(self.label_last_op, alignment=Qt.AlignmentFlag.AlignTop | Qt.AlignmentFlag.AlignLeft)
 
-        self.label_last_args = QLabel("Last Arguments: [None, None]")
-        self.label_last_args.setFont(self.label_font)
-        operation_layout.addWidget(self.label_last_args, alignment=Qt.AlignmentFlag.AlignTop | Qt.AlignmentFlag.AlignLeft)
-
         self.label_last_op_line = QLabel("Line: None / None")
         self.label_last_op_line.setFont(self.label_font)
         operation_layout.addWidget(self.label_last_op_line, alignment=Qt.AlignmentFlag.AlignTop | Qt.AlignmentFlag.AlignLeft)

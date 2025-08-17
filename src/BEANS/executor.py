@@ -3,6 +3,7 @@ import sys
 import signal
 import os
 from pathlib import Path
+from time import perf_counter
 
 from src.BEANS.BEANS_GUI.gui import BEANSGui
 from src.BEANS.interpreter.interpreter import interpret_line
@@ -30,6 +31,8 @@ class BEANSExecutor:
         self.index = 0
 
     def step(self):
+        start = perf_counter()
+
         if self.index >= len(self.lines):
             return
 
@@ -44,6 +47,7 @@ class BEANSExecutor:
         self.gui.label_last_op_line.setText(
             f"Line: {self.index} / {len(self.lines)}"
         )
+        self.gui.label_last_op_time.setText(f"Time Taken: {(perf_counter() - start) * 1000:.3f}")
 
 
 if __name__ == "__main__":

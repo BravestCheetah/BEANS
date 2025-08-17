@@ -3,7 +3,7 @@ class register():
     def __init__(self, size):
         self.size = size
         self.val = 0
-        self.max = 1 << self.size - 1
+        self.max = (1 << self.size) - 1
 
     def set(self, val):
         if val < 0 or val > self.max:

@@ -11,7 +11,7 @@ class register():
         self.val = val
     
     def value(self):
-        return format(self.val, f'0{self.size}b')
+        return self.val
 
 
 class registers():

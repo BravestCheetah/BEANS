@@ -21,8 +21,10 @@ def _check_args(args, expected_args):
 def handle_args(args, expected_args):
     valid = _check_args(args, expected_args)
 
-    import src.BEANS.logger_global as lg
     if not valid:
+        import src.BEANS.logger_global as lg
+        import src.BEANS.exit as e
         lg.logger.error("Error: Args parsed was not valid") # type: ignore
+        e.exit()
 
     return _get_args(args)

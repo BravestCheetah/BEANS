@@ -59,24 +59,24 @@ But, lets at least go over the list of instructions and what they do.
 
 ## Instructrions
 
-| Instruction | Arguments | Explanation |
-|-------------|-----------|-------------|
-| **Loading Data** |  |  |
-| LDI | reg, int | Loads the integer into the register provided |
-| - |  |  |
-| **Arithemtic** |  |  |
-| ADD | reg 1, reg 2, reg 3 | stores the result of reg 1 + reg 2 into reg 3 |
-| SUB | reg 1, reg 2, reg 3 | stores the result of reg 1 - reg 2 into reg 3 |
-| - |  |  |
-| **Bitwise** |  |  |
-| bOR | reg 1, reg 2, reg 3 | stores the result of reg 1 bitwise OR reg 2 into reg 3 |
-| bAND | reg 1, reg 2, reg 3 | stores the result of reg 1 bitwise AND reg 2 into reg 3 |
-| bNOT | reg 1, reg 2 | stores the result of bitwise NOT of reg 1 into reg 2 |
-| LSHFT | reg 1, reg 2, reg 3 | Shifts the bits in reg 1 left by reg 2 steps and stores it into reg 3 |
-| RSHFT | reg 1, reg 2, reg 3 | Shifts the bits in reg 1 right by reg 2 steps and stores it into reg 3 |
-| - |  |  |
-| **Misc** |  |  |
-| HALT |  | Stops the program no matter where in the file its placed |
+| Instruction | Arguments | Explanation | Example |
+|-------------|-----------|-------------|---------|
+| **Loading Data** |  |  |  |
+| LDI | reg, int | Loads the integer into the register provided | [add2numbers.bean](https://github.com/BravestCheetah/BEANS/blob/main/examples/add2numbers.bean) |
+| - |  |  |  |
+| **Arithemtic** |  |  |  |
+| ADD | reg 1, reg 2, reg 3 | stores the result of reg 1 + reg 2 into reg 3 | [add2numbers.bean](https://github.com/BravestCheetah/BEANS/blob/main/examples/add2numbers.bean) |
+| SUB | reg 1, reg 2, reg 3 | stores the result of reg 1 - reg 2 into reg 3 | Works the same as ADD |
+| - |  |  |  |
+| **Bitwise** |  |  |  |
+| bOR | reg 1, reg 2, reg 3 | stores the result of reg 1 bitwise OR reg 2 into reg 3 | [bitwiseOperations.bean](https://github.com/BravestCheetah/BEANS/blob/main/examples/bitwiseOperations.bean) |
+| bAND | reg 1, reg 2, reg 3 | stores the result of reg 1 bitwise AND reg 2 into reg 3 | [bitwiseOperations.bean](https://github.com/BravestCheetah/BEANS/blob/main/examples/bitwiseOperations.bean) |
+| bNOT | reg 1, reg 2 | stores the result of bitwise NOT of reg 1 into reg 2 | [bitwiseOperations.bean](https://github.com/BravestCheetah/BEANS/blob/main/examples/bitwiseOperations.bean) |
+| LSHFT | reg 1, reg 2, reg 3 | Shifts the bits in reg 1 left by reg 2 steps and stores it into reg 3 | [bitwiseOperations.bean](https://github.com/BravestCheetah/BEANS/blob/main/examples/bitwiseOperations.bean) |
+| RSHFT | reg 1, reg 2, reg 3 | Shifts the bits in reg 1 right by reg 2 steps and stores it into reg 3 | [bitwiseOperations.bean](https://github.com/BravestCheetah/BEANS/blob/main/examples/bitwiseOperations.bean) |
+| - |  |  |  |
+| **Misc** |  |  |  |
+| HALT |  | Stops the program no matter where in the file its placed | [add2numbers.bean](https://github.com/BravestCheetah/BEANS/blob/main/examples/add2numbers.bean) |
 
 
 

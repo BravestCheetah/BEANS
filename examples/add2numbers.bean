@@ -1,9 +1,10 @@
 // Lets do 1+1
 
-// First We Load 1 into register 1
-LDI 1 r1
+// First We Load 1 into register 0
+LDI r0 i1
 
-// Then we do register 1 plus register 1 and store it in register 2
-ADD r1 r1 r2
 
-// Now The Result Of 1+1 is in register 2!
+// Then we do register 0 plus register 0 and store it in register 1
+ADD r0 r0 r1
+
+// Now The Result Of 1+1 is in register 1!

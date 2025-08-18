@@ -42,6 +42,8 @@ HALT
 
 Lets go over the code
 
+**NOTE: this program is also availble [here](https://github.com/BravestCheetah/BEANS/blob/main/examples/add2numbers.bean)**
+
 * `LDI r0 i1` - Loads the number 1 into register 0
 * `ADD r0 r0 r1` - Adds the number in register 0 with itself and saving the result into register 1
 * `HALT` - Stops the program

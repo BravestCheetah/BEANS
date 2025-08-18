@@ -1,10 +1,10 @@
 def _is_num(arg):
     return arg[0] == "int" or arg[0] == "bin"
 
-def get_val(arg):
-    return arg[1]
+def _get_args(args):
+    return [arg[1] for arg in args]
 
-def check_args(args, expected_args):
+def _check_args(args, expected_args):
     if len(args) != len(expected_args):
         return False
     
@@ -17,3 +17,10 @@ def check_args(args, expected_args):
                 return False
     
     return True
+
+def handle_args(args, expected_args):
+    valid = _check_args(args, expected_args)
+
+    
+
+    return _get_args(args)

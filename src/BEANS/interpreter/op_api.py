@@ -5,7 +5,7 @@ def get_val(arg):
     return arg[1]
 
 def check_args(args, expected_args):
-    if len(args) == len(expected_args):
+    if len(args) != len(expected_args):
         return False
     
     for i in range(len(args)):

@@ -8,5 +8,5 @@ class operation:
 
     @staticmethod
     def execute_operation(mem: tuple[registers, memory], args, pc_index): # type: ignore
-        print(f"TEST got called! Argument 1 is num: {check_args(args, ["num"])} with value {get_val(args[0])}")
+        print(f"TEST got called! Argument 1 is num: {check_args(args, ["num"])} with value {get_val(args[0])}. Raw arguments: {args}")
         return pc_index + 1

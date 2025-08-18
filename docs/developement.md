@@ -24,6 +24,10 @@ Before we start, lets go over the different argument types:
 
 An normal integer, defined by writing the prefix "i" before an number, like this: `i32`
 
+* BIN
+
+A normal binary number, defiined by writing prefix "b" before an number, like this: `b01010101`
+
 * Register Adress
 
 A Register adress defined by writing the prefix "r" before an number, like this: `r5`

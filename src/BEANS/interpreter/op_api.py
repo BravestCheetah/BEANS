@@ -9,7 +9,7 @@ def check_args(args, expected_args):
         return False
     
     for i in range(len(args)):
-        if (args[i][0] != expected_args[i]) or (expected_args[i] != "num") or ( not _is_num(args[i][0])):
+        if (args[i][0] != expected_args[i]) or (expected_args[i] != "num") or ( not _is_num(args[i])):
             return False
     
     return True

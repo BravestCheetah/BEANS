@@ -14,7 +14,7 @@ class BEANSGui(QMainWindow):
         start = perf_counter()
 
         self.setWindowTitle(f"BEANS 0.1.0 - {code_path}")
-        self.setGeometry(400, 400, 435, 400)
+        self.setGeometry(400, 400, 550, 400)
 
         central_widget = QWidget()
         self.setCentralWidget(central_widget)

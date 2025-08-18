@@ -20,7 +20,7 @@ Then you can just run any code file by navigating inside the repo and run this c
 ## How do i write code?
 *Suprisingly fast, so dont hold back (im serious this stuff FAST)*
 
-We have documentation about the developement process and coding syntax as well as examples availble [here](https://github.com/BravestCheetah/BEANS/tree/main/docs/development.md)
+We have documentation about the developement process and coding syntax as well as examples availble [here](https://github.com/BravestCheetah/BEANS/blob/main/docs/developement.md)
 
 ## How do i contribute?
 *Contribution is the first step towards freindship, if your code isnt shit*

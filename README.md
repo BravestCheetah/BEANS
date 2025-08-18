@@ -16,6 +16,7 @@ Then you can just run any code file by navigating inside the repo and run this c
 **NOTE: This will change in the future, exec.py is a temporary program to allow the user to execute code until the cli gets implemented**
 
 ## How do i write code?
+*Using the project is the best way to utilize the project*
 
 We have documentation about the developement process and coding syntax as well as examples availble [here](https://github.com/BravestCheetah/BEANS/tree/main/docs/development.md)
 

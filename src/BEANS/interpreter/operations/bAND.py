@@ -6,7 +6,6 @@ from src.BEANS.interpreter.op_api import handle_args
 
 class operation:
     def execute_operation(mem: tuple[registers, memory], args, pc_index): # type: ignore
-        print(args)
 
         args = handle_args(args, ["reg", "reg", "reg"])
 

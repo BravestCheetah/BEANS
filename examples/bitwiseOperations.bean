@@ -1,0 +1,35 @@
+// Lets compute numbers using bitwise operations!
+
+
+// load some sample values
+LDI r0 b101010 
+LDI r1 b111000
+
+// you can also use integers but we reccomend using raw binary numbers for readability when using bitwise operations:
+// LDI r0 i42
+// LDI r1 i56
+// Binary and integers gets translated into the same thing in the compilation process so it doesnt matter.
+
+
+// Lets do some bitwise operations:
+
+bAND r0 r1 r2
+// result: 101000
+
+bOR r0 r1 r3
+// result: 111010
+
+bXOR r0 r1 r4
+// result: 010010
+
+
+// Lets Do Some Binary Shifting, first lets load a shift amount into r0
+LDI r0 i2 
+
+// lets shift r1 ( 111000 ) with r0 (2) to r5
+
+LSHFT r1 r0 r5
+// Result: 100000
+
+RSHFT r1 r0 r6
+// Result: 0011100

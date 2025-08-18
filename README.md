@@ -17,4 +17,4 @@ Then you can just run any code file by navigating inside the repo and run this c
 
 ## How do i write code?
 
-We have documentation about the developement process and coding syntax as well as examples availble [here](https://github.com/BravestCheetah/BEANS)
+We have documentation about the developement process and coding syntax as well as examples availble [here](https://github.com/BravestCheetah/BEANS/tree/main/docs/development.md)

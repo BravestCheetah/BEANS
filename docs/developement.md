@@ -61,8 +61,23 @@ But, lets at least go over the list of instructions and what they do.
 
 | Instruction | Arguments | Explanation |
 |-------------|-----------|-------------|
+| **Loading Data** |  |  |
 | LDI | reg, int | Loads the integer into the register provided |
+| - |  |  |
+| **Arithemtic** |  |  |
+| ADD | reg 1, reg 2, reg 3 | stores the result of reg 1 + reg 2 into reg 3 |
+| SUB | reg 1, reg 2, reg 3 | stores the result of reg 1 - reg 2 into reg 3 |
+| - |  |  |
+| **Bitwise** |  |  |
+| bOR | reg 1, reg 2, reg 3 | stores the result of reg 1 bitwise OR reg 2 into reg 3 |
+| bAND | reg 1, reg 2, reg 3 | stores the result of reg 1 bitwise AND reg 2 into reg 3 |
+| bNOT | reg 1, reg 2 | stores the result of bitwise NOT of reg 1 into reg 2 |
+| LSHFT | reg 1, reg 2, reg 3 | Shifts the bits in reg 1 left by reg 2 steps and stores it into reg 3 |
+| RSHFT | reg 1, reg 2, reg 3 | Shifts the bits in reg 1 right by reg 2 steps and stores it into reg 3 |
+| - |  |  |
+| **Misc** |  |  |
 | HALT |  | Stops the program no matter where in the file its placed |
-| ADD | reg, reg, reg | stores the result of reg 1 and reg 2 into reg 3 |
+
+
 
 

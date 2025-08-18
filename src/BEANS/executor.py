@@ -31,17 +31,15 @@ class BEANSExecutor:
 
     def step(self):
         if self.index >= len(self.lines):
-            return  # finished program
+            return
 
         line = self.lines[self.index].strip()
         if not line or line.startswith("//"):
             self.index += 1
             return
 
-        # run one line
         self.index = interpret_line(line, self.regs, self.mem, self.index)
 
-        # update GUI labels here
         self.gui.label_last_op.setText(f"Last Operation: {line}")
         self.gui.label_last_op_line.setText(
             f"Line: {self.index} / {len(self.lines)}"
@@ -50,9 +48,8 @@ class BEANSExecutor:
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    signal.signal(signal.SIGINT, signal.SIG_DFL)  # Ctrl+C works
+    signal.signal(signal.SIGINT, signal.SIG_DFL)
 
-    # --- setup logging + memory ---
     os.makedirs(user_log_dir("BEANS", "Cheetah"), exist_ok=True)
     logger = Logger(
         "BEANS",
@@ -63,7 +60,6 @@ if __name__ == "__main__":
     mem = memory(32, 8)
     regs = registers(8, 8)
 
-    # --- build executor + gui ---
     gui = BEANSGui(argv[1], logger)
     executor = BEANSExecutor(argv[1], gui, logger, mem, regs)
 
@@ -71,6 +67,6 @@ if __name__ == "__main__":
 
     timer = QTimer()
     timer.timeout.connect(executor.step)
-    timer.start(0)  # run as fast as possible
+    timer.start(0)
 
     sys.exit(app.exec())

@@ -17,7 +17,7 @@ def parse_args(args: list[str]) -> list:
             parsed.append(("int", int(arg[1:])))
         
         elif arg.startswith("b"):
-            parsed.append(("bin", int(arg[1:])))
+            parsed.append(("bin", int(arg[1:], 2)))
         
     return parsed
 

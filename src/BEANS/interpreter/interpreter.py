@@ -8,16 +8,16 @@ def parse_args(args: list[str]) -> list:
 
     for arg in args:
         if arg.startswith("r"):
-            parsed.append(("reg", arg[1:]))
+            parsed.append(("reg", int(arg[1:])))
         
         elif arg.startswith("m"):
-            parsed.append(("mem", arg[1:]))
-
-        elif arg.startswith("io"):
-            parsed.append(("io", arg[2:]))
+            parsed.append(("mem", int(arg[1:])))
 
         elif arg.startswith("i"):
-            parsed.append(("int", arg[1:]))
+            parsed.append(("int", int(arg[1:])))
+        
+        elif arg.startswith("b"):
+            parsed.append(("bin", int(arg[1:])))
         
     return parsed
 

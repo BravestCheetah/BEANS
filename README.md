@@ -18,3 +18,16 @@ Then you can just run any code file by navigating inside the repo and run this c
 ## How do i write code?
 
 We have documentation about the developement process and coding syntax as well as examples availble [here](https://github.com/BravestCheetah/BEANS/tree/main/docs/development.md)
+
+## How do i contribute?
+
+To contribute follow these steps:
+
+* Fork the repo
+* Review the entire codebase (its not that much code, just read through it so you understand what the stuff does)
+* make you changes
+* Give an informational commit message (not just "." or "commit")
+* Create a PR containing all your commits on github
+* Wait for a developer to review and approve your changes
+* If given, apply changes mentioned by reviewers and create a new PR
+* Youve now contributed!

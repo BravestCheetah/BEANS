@@ -33,3 +33,5 @@ LSHFT r1 r0 r5
 
 RSHFT r1 r0 r6
 // Result: 0011100
+
+HALT

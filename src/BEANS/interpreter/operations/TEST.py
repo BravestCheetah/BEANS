@@ -11,5 +11,4 @@ class operation:
         handle_args(args, [])
         
         print(f"TEST got called!")
-        print(args)
         return pc_index + 1

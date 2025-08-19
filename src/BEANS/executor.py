@@ -86,7 +86,7 @@ class BEANSExecutor:
         self.gui.label_register_data.setText(reg_data)
         self.gui.label_memory_data.setText(mem_data)
 
-        self.gui.label_last_op_time.setText(f"Time Taken: {(perf_counter() - start) * 1000:.3f}")
+        self.gui.label_last_op_time.setText(f"Time Taken: {(perf_counter() - start) * 1000:.3f} ms")
         
 
 

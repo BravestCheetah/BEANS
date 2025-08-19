@@ -9,3 +9,5 @@ class restricted_memory:
 
         if adress in self.access_addresses:
             return self.mem.memory.read(adress)
+        else:
+            return 0

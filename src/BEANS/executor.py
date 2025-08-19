@@ -91,6 +91,7 @@ class BEANSExecutor:
 
 
 def run_executor(code_path):
+
     app = QApplication([])
     signal.signal(signal.SIGINT, signal.SIG_DFL)
 
@@ -102,7 +103,12 @@ def run_executor(code_path):
     )
 
     import src.BEANS.logger_global as lg
+    import src.BEANS.exit as e
     lg.logger = logger
+
+    if (not os.path.exists(code_path)) or (not code_path.endswith(".bean")):
+        lg.logger.error("File provided doesnt exist or is not a valid BEANS file")
+        e.exit()
 
     mem = memory(32, 8)
     regs = registers(8, 8)

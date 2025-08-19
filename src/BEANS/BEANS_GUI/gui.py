@@ -13,7 +13,7 @@ class BEANSGui(QMainWindow):
         # self.logger.info("Constructing GUI...")
         # start = perf_counter()
 
-        self.setWindowTitle(f"BEANS 0.1.0 - {code_path}")
+        self.setWindowTitle(f"BEANS - {code_path}")
         self.setGeometry(400, 400, 550, 400)
 
         central_widget = QWidget()

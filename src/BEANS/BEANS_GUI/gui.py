@@ -10,8 +10,8 @@ class BEANSGui(QMainWindow):
         super().__init__()
 
         self.logger = logger
-        self.logger.info("BEANSGui - Initializing GUI")
-        start = perf_counter()
+        # self.logger.info("Constructing GUI...")
+        # start = perf_counter()
 
         self.setWindowTitle(f"BEANS 0.1.0 - {code_path}")
         self.setGeometry(400, 400, 550, 400)
@@ -80,4 +80,4 @@ class BEANSGui(QMainWindow):
         
         main_layout.addWidget(module_panel)
 
-        logger.info(f"Initialized gui in {(perf_counter() - start) * 1000:.3f}ms")
+        # logger.info(f"Constructed GUI in {(perf_counter() - start) * 1000:.3f}ms")

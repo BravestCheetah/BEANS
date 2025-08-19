@@ -10,5 +10,3 @@ class memory():
     def write(self, adress: int, val_reg: register):
         self.memory.write(adress, val_reg.value())
     
-    def set(self, adress: int, value: int):
-        self.memory.write(adress, value)

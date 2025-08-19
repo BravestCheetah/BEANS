@@ -106,12 +106,16 @@ def run_executor(code_path):
     import src.BEANS.exit as e
     lg.logger = logger
 
+    start = perf_counter()
+    lg.logger.info("Initializing BEANS Interpreter...")
+
     if (not os.path.exists(code_path)) or (not code_path.endswith(".bean")):
         lg.logger.error("File provided doesnt exist or is not a valid BEANS file")
         e.exit()
 
     mem = memory(32, 8)
     regs = registers(8, 8)
+    lg.logger.info(f"Initiialized Interpreter in {(perf_counter() - start) * 1000:.3f} ms")
 
     gui = BEANSGui(code_path, logger)
     executor = BEANSExecutor(argv[1], gui, logger, mem, regs)

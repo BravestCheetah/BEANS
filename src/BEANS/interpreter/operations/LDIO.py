@@ -12,7 +12,7 @@ class operation:
         module_id = chr(args[0]) + chr(args[1]) + chr(args[2])
         memory_range = list(range(args[3], args[4] + 1))
 
-        rmem = restricted_memory(mem[1], memory_range)
+        rmem = restricted_memory(mem[1], memory_range) 
 
 
         return pc_index + 1

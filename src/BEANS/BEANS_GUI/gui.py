@@ -1,9 +1,11 @@
 from PyQt6.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QGroupBox, QLabel, QScrollArea
-from PyQt6.QtCore import Qt
+from PyQt6.QtCore import Qt, QEvent
 from PyQt6.QtGui import QFont
 
 from usefullog.logger import Logger
 from time import perf_counter
+
+import sys
 
 class BEANSGui(QMainWindow):
     def __init__(self, code_path, logger: Logger):

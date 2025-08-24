@@ -18,6 +18,7 @@ from platformdirs import user_log_dir
 from PyQt6.QtCore import QTimer
 from PyQt6.QtWidgets import QApplication
 
+IO_MODULES = []
 
 class BEANSExecutor:
     def __init__(self, path, gui: BEANSGui, logger: Logger, mem: memory, regs: registers):

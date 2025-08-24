@@ -10,6 +10,7 @@ from src.BEANS.interpreter.interpreter import interpret_line
 from src.BEANS.interpreter.memory.memory import memory
 from src.BEANS.interpreter.memory.registers import registers
 from src.BEANS.logger_global import logger as global_logger
+from src.BEANS.init_log import init_logs
 
 from usefullog.logger import Logger
 from platformdirs import user_log_dir
@@ -105,6 +106,8 @@ def run_executor(code_path):
     import src.BEANS.logger_global as lg
     import src.BEANS.exit as e
     lg.logger = logger
+
+    init_logs()
 
     start = perf_counter()
     lg.logger.info("Initializing BEANS...")

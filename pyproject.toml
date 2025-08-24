@@ -1,10 +1,11 @@
 [project]
 name = "beans"
-version = "0.1.0"
+version = "0.8.2"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "platformdirs>=4.3.8",
+    "pyqt6>=6.9.1",
     "usefullog>=0.8.4",
 ]

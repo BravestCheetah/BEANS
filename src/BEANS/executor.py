@@ -103,8 +103,10 @@ def run_executor(code_path):
     )
 
     import src.BEANS.logger_global as lg
+    import src.BEANS.modlist as ml
     import src.BEANS.exit as e
     lg.logger = logger
+    ml.IO_MODULES = []
 
     init_logs()
 

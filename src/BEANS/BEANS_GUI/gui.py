@@ -7,6 +7,8 @@ from time import perf_counter
 
 import sys
 
+from src.BEANS.modlist import IO_MODULES
+
 class BEANSGui(QMainWindow):
     def __init__(self, code_path, logger: Logger):
         super().__init__()
@@ -85,5 +87,7 @@ class BEANSGui(QMainWindow):
         # logger.info(f"Constructed GUI in {(perf_counter() - start) * 1000:.3f}ms")
     
     def closeEvent(self, a0: QCloseEvent | None) -> None:
+        for module in IO_MODULES: # type: ignore
+            module.kill()
+        
         return super().closeEvent(a0)
-    

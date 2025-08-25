@@ -2,8 +2,7 @@ from src.BEANS.interpreter.memory.memory import memory
 from src.BEANS.interpreter.memory.registers import registers
 from src.BEANS.io_api.rmem import restricted_memory
 from src.BEANS.exit import exit
-from src.BEANS.logger_global import logger
-from src.BEANS.modlist import IO_MODULES
+from src.BEANS.data import data
 
 from src.BEANS.interpreter.op_api import handle_args
 
@@ -34,7 +33,7 @@ class operation:
             spec.loader.exec_module(module)
 
             mod = module.BIOMod(rmem, memory_range)  # expects BIOMod class inside the file
-            IO_MODULES.append(mod) # type: ignore
+            data.module_list.append(mod)
             mod_command = mod.exec_module
 
 
@@ -44,7 +43,7 @@ class operation:
             mod_thread.start()
 
         except Exception as e:
-            logger.error(f"Failed To Load Module {module_id}: {e}") # type: ignore
+            data.logger.error(f"Failed To Load Module {module_id}: {e}")
             exit()
 
         return pc_index + 1

@@ -24,7 +24,7 @@ def handle_args(args, expected_args):
     valid = _check_args(args, expected_args)
 
     if not valid:
-        data.logger.error("Error: Args parsed was not valid") # type: ignore
+        data.logger.error("Error: Args parsed was not valid")
         data.exit()
 
     return _get_args(args)

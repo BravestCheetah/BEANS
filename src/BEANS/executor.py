@@ -114,7 +114,7 @@ def run_executor(code_path):
 
     timer = QTimer()
     timer.timeout.connect(executor.step)
-    lg.logger.info(f"Initiialized BEANS in {(perf_counter() - start) * 1000:.3f} ms")
+    data.logger.info(f"Initiialized BEANS in {(perf_counter() - start) * 1000:.3f} ms")
     timer.start(0)
 
     sys.exit(app.exec())

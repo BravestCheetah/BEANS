@@ -15,6 +15,14 @@ class _data:
         )
 
         self.module_list = []
+    
+
+
+    def init_logs(self):
+        self.logger.info("-------- BEANS ---------")
+        self.logger.info(" - Beans Is Initializing - ")
+        self.logger.info(f" - Beans IO Path: {user_data_dir("BEANS", "Cheetah")} - ")
+        self.logger.info("-------- BEANS ---------")
 
 
 

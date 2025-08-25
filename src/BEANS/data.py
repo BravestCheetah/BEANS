@@ -1,5 +1,6 @@
 from usefullog.logger import Logger
 from platformdirs import user_log_dir, user_data_dir
+from sys import exit as sys_exit
 
 
 
@@ -24,6 +25,12 @@ class _data:
         self.logger.info(f" - Beans IO Path: {user_data_dir("BEANS", "Cheetah")} - ")
         self.logger.info("-------- BEANS ---------")
 
+
+    def exit(self, msg: str = "Exiting the program..."):
+        if msg:
+            self.logger.critical(msg)
+
+        sys_exit(1)
 
 
 data = _data()

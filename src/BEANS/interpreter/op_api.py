@@ -1,3 +1,5 @@
+from src.BEANS.data import data
+
 def _is_num(arg):
     return arg[0] == "int" or arg[0] == "bin"
 
@@ -22,9 +24,7 @@ def handle_args(args, expected_args):
     valid = _check_args(args, expected_args)
 
     if not valid:
-        import src.BEANS.logger_global as lg
-        import src.BEANS.exit as e
-        lg.logger.error("Error: Args parsed was not valid") # type: ignore
-        e.exit()
+        data.logger.error("Error: Args parsed was not valid") # type: ignore
+        data.exit()
 
     return _get_args(args)

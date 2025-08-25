@@ -1,7 +1,6 @@
 from src.BEANS.interpreter.memory.memory import memory
 from src.BEANS.interpreter.memory.registers import registers
 from src.BEANS.io_api.rmem import restricted_memory
-from src.BEANS.exit import exit
 from src.BEANS.data import data
 
 from src.BEANS.interpreter.op_api import handle_args
@@ -44,6 +43,6 @@ class operation:
 
         except Exception as e:
             data.logger.error(f"Failed To Load Module {module_id}: {e}")
-            exit()
+            data.exit()
 
         return pc_index + 1

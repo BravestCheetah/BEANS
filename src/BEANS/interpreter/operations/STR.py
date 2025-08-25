@@ -9,6 +9,6 @@ class operation:
 
         args = handle_args(args, ["mem" ,"reg"])
 
-        mem[1].write(args[0], args[1])
+        mem[1].write(args[0], mem[0].regs[args[1]])
 
         return pc_index + 1

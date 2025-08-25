@@ -10,7 +10,7 @@ from src.BEANS.interpreter.interpreter import interpret_line
 from src.BEANS.interpreter.memory.memory import memory
 from src.BEANS.interpreter.memory.registers import registers
 from src.BEANS.init_log import init_logs
-from BEANS.data import settings
+from BEANS.data import data
 
 from usefullog.logger import Logger
 from platformdirs import user_log_dir
@@ -96,32 +96,23 @@ def run_executor(code_path):
     signal.signal(signal.SIGINT, signal.SIG_DFL)
 
     os.makedirs(user_log_dir("BEANS", "Cheetah"), exist_ok=True)
-    logger = Logger(
-        "BEANS",
-        do_log_saving=True,
-        log_save_folder=user_log_dir("BEANS", "Cheetah")
-    )
 
-    import src.BEANS.logger_global as lg
-    import src.BEANS.modlist as ml
     import src.BEANS.exit as e
-    lg.logger = logger
-    ml.IO_MODULES = []
 
     init_logs()
 
     start = perf_counter()
-    lg.logger.info("Initializing BEANS...")
+    data.logger.info("Initializing BEANS...")
 
     if (not os.path.exists(code_path)) or (not code_path.endswith(".bean")):
-        lg.logger.error("File provided doesnt exist or is not a valid BEANS file")
+        data.logger.error("File provided doesnt exist or is not a valid BEANS file")
         e.exit()
 
     mem = memory(32, 8)
     regs = registers(8, 8)
 
-    gui = BEANSGui(code_path, logger)
-    executor = BEANSExecutor(argv[1], gui, logger, mem, regs)
+    gui = BEANSGui(code_path, data.logger)
+    executor = BEANSExecutor(argv[1], gui, data.logger, mem, regs)
 
     gui.show()
 

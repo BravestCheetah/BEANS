@@ -3,8 +3,7 @@ from platformdirs import user_log_dir, user_data_dir
 
 
 
-# A settings class containing all settings of the project, then we create an instance of the settings refrenced everywhere to get / set settings
-# Initial settings = Default Settings
+# A data class containing all settings and some data of the project, then we create an instance of the data refrenced everywhere to get / set data
 
 class _data:
     def __init__(self):
@@ -15,6 +14,7 @@ class _data:
             log_save_folder=user_log_dir("BEANS", "Cheetah")
         )
 
+        self.module_list = []
 
 
 

@@ -1,6 +1,6 @@
 from PyQt6.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QGroupBox, QLabel, QScrollArea
 from PyQt6.QtCore import Qt, QEvent
-from PyQt6.QtGui import QFont
+from PyQt6.QtGui import QCloseEvent, QFont
 
 from usefullog.logger import Logger
 from time import perf_counter
@@ -83,3 +83,7 @@ class BEANSGui(QMainWindow):
         main_layout.addWidget(module_panel)
 
         # logger.info(f"Constructed GUI in {(perf_counter() - start) * 1000:.3f}ms")
+    
+    def closeEvent(self, a0: QCloseEvent | None) -> None:
+        return super().closeEvent(a0)
+    

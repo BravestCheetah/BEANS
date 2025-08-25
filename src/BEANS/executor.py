@@ -95,9 +95,6 @@ def run_executor(code_path):
     signal.signal(signal.SIGINT, signal.SIG_DFL)
 
     os.makedirs(user_log_dir("BEANS", "Cheetah"), exist_ok=True)
-
-    import src.BEANS.exit as e
-
     data.init_logs()
 
     start = perf_counter()
@@ -105,7 +102,7 @@ def run_executor(code_path):
 
     if (not os.path.exists(code_path)) or (not code_path.endswith(".bean")):
         data.logger.error("File provided doesnt exist or is not a valid BEANS file")
-        e.exit()
+        data.exit()
 
     mem = memory(32, 8)
     regs = registers(8, 8)

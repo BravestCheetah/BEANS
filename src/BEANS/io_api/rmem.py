@@ -8,7 +8,7 @@ class restricted_memory:
     def read(self, adress: int) -> int:
 
         if adress in self.access_adresses:
-            return self.mem.memory.read(adress)
+            return self.mem.read(adress)
         else:
             return 0
     
